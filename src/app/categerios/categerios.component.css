@@ -1,0 +1,22 @@
+img{
+    transition: all 1s;
+}
+figure:hover img {
+    transform: scale(1.25);
+    
+}
+
+figure:hover .layer {
+    transform: translate(0);
+    
+}
+
+
+
+figure {
+    overflow: hidden;
+}
+.layer {
+    transform: translateY(100%);
+    transition: all 1s;
+}

@@ -1,0 +1,35 @@
+
+<div class="row  align-items-center box-style rounded-5 my-3 w-75 m-auto p-1  " *ngFor="let order of orders">
+    <div class="d-flex justify-content-between align-items-center p-2">
+        <span> IT WAS : {{order.createdAt.split('T')?.join(' AT  ') }}</span>
+        <span class="text-main h3"> total price : {{order.totalOrderPrice}} EGP</span>
+    </div>
+    
+
+    <div class="row border border-1 border-success rounded-5 mx-auto align-items-center mb-1 " *ngFor="let item of order.cartItems">
+        <div class="col-md-3 py-1">
+            <figure class="text-center">
+                <img [src]="item.product.imageCover" alt="" class="w-50">
+            </figure>
+        </div>
+        <div class="col-md-6">
+            <h1 class="h5">{{item.product.title}}</h1>
+            <p class="fw-bolder mb-0">{{item.product.brand.name}}</p>
+            <span class="text-main">{{item.product.category.name}}</span>
+            <br>
+            <span class="fw-bold d-block">count: {{item.count}} </span>
+            <span class="fw-bold">price: {{item.price}} EGP</span>
+            <br>
+        </div>
+        <div class="col-md-3 h3 row align-items-center">
+            <span> price : {{item.price*item.count }}</span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div *ngIf="userId==''" class="my-5 py-5 text-center h1 text-main">
+    no orders yet
+</div>

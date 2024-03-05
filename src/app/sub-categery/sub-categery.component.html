@@ -1,0 +1,65 @@
+<!-- <p class="py-5 my-5 text-center">{{specificCategeryId}} <button (click)="getAllSubCategoriesOnCategory(specificCategeryId)" class="btn btn-danger">keep try</button></p> -->
+  <h1 class="text-main text-center ">sub categerios</h1>
+<div class="row container mx-auto my-5 align-items-center">
+      
+    <div class="col-md-4 " *ngFor="let categery of subCategeryOfCategery">
+
+        <p (click)="getspecificSubCategory(categery._id)"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="p-5 border-2 border-success fw-bold h3 shadow text-center">{{ categery.name}}</p>
+
+        <div class="mt-5 modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> subcategery </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-main text-center h2">
+                {{nameOfspaseficCtegery}} <span *ngIf="nameOfspaseficCtegery=='' "><i class="fa-solid fa-spinner fa-spin text-main"></i> </span> 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+</div>
+
+<div  class="container mx-auto  align-items-center">
+    <button  (click)="getAllSubCategerys()" class="btn bg-main text-white my-2">look for anther subcategerios ?! <span *ngIf=" lodaing "><i class="fa-solid fa-spinner fa-spin text-white"></i> </span></button>
+    <div class="row my-5" >
+        <div class="col-md-4 " *ngFor="let subcategery of allSubcategerios">
+             <!-- button of model -->
+            <p (click)="getspecificSubCategory(subcategery._id)"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="p-5 border-2 border-success fw-bold h3 shadow text-center" class="p-5 border-2 border-success fw-bold h3 shadow text-center">{{ subcategery.name}}</p>
+            <!-- model -->
+            <div class="mt-5 modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> subcategery </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-main text-center h2">
+                    {{nameOfspaseficCtegery}}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Button trigger modal 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>-->
+  
+  <!-- Modal -->
+  

@@ -1,0 +1,112 @@
+<nav  #navbar class=" navbar navbar-expand-lg bg-body-tertiary fixed-top  ">
+   
+    <div class="container-fluid ">
+        <a class="navbar-brand" href="#"><img src="assets/finalProject assets/images/freshcart-logo.svg" alt=""></a>
+
+
+<!-- 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- navbarNav -->
+
+
+        <div class="collapse navbar-collapse  justify-content-between " id="navbarSupportedContent">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link active " *ngIf="islogin" routerLinkActive="bg-main rounded-pill text-white"
+                        routerLink="home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="islogin" routerLinkActive="bg-main rounded-pill text-white"
+                        routerLink="/brands">brands</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="islogin" routerLinkActive="bg-main rounded-pill text-white"
+                        routerLink="wishList">wishes</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="islogin" routerLinkActive="bg-main rounded-pill text-white"
+                        routerLink="cart">cart</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="islogin" routerLinkActive="bg-main rounded-pill text-white"
+                        routerLink="categerios">categerios</a>
+                </li>
+
+
+                <!-- from here -->
+
+                
+
+
+
+
+
+            </ul>
+
+           <ul class="navbar-nav d-flex align-items-center">
+
+                <li class="nav-item cursor-pointer">
+                    <i class="nav-link fa-brands fa-facebook"></i>
+                </li>
+
+                <li class="nav-item cursor-pointer">
+                    <i class="nav-link fa-brands fa-twitter"></i>
+                </li>
+
+                <li class="nav-item cursor-pointer">
+                    <i class="nav-link fa-brands fa-instagram"></i>
+                </li>
+
+                <li *ngIf="islogin"  routerLink="/orders" class="nav-item cursor-pointer">
+                    <i class="fa-solid fa-truck text-main fa-2x m-2"></i>
+                </li>
+
+                <li class="nav-item cursor-pointer" *ngIf="islogin"  routerLink="/cart">
+
+                    <div class=" bg-warning p-2 rounded-pill">
+                        <i class="fa-solid fa-cart-shopping text-main position-relative"> </i>
+                        <span class="ms-1 text-main fw-bold ">{{numberOfCartItems}}</span>
+                    </div>
+
+                </li>
+
+
+                <li class="nav-item cursor-pointer">
+                    <a class="nav-link " *ngIf="!islogin" routerLinkActive="bg-main rounded-pill text-white"
+                        routerLink="login">login</a>
+                </li>
+
+                <li class="nav-item cursor-pointer">
+                    <a class="nav-link" *ngIf="!islogin" routerLinkActive="bg-main rounded-pill text-white"
+                        routerLink="register">register</a>
+                </li>
+
+                <li class="nav-item cursor-pointer">
+                    <a class="nav-link" (click)="logout()" *ngIf="islogin"
+                        routerLinkActive="bg-main rounded-pill text-white" routerLink="logout">logout</a>
+                </li>
+
+            </ul> 
+
+        </div>
+
+
+    </div>
+   
+</nav>

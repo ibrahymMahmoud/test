@@ -1,0 +1,20 @@
+<section class="my-5 container">
+
+    <form [formGroup]="payForm" (ngSubmit)="submitPayBtn()" >
+        <h1 class="text-main">pay data </h1>
+        <div class="mb-3">
+            <label for="">details :</label>
+            <input formControlName="details" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="">phone :</label>
+            <input formControlName="phone" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="">city :</label>
+            <input formControlName="city" type="text" class="form-control">
+        </div>
+        <button type="submit" class="d-block ms-auto my-2 btn bg-main text-white">pay</button>
+    </form>
+
+</section>

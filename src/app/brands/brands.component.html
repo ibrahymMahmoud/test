@@ -1,0 +1,26 @@
+
+    <div class="row  my-1 container mx-auto">
+        <div class="col-lg-3 col-md-4  cursor-pointer p-2" *ngFor="let brand of allBrands">
+            <figure  (click)="getOnePrand(brand._id)"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="box-style">
+                <img class="w-100" [src]="brand.image" [alt]="brand.slug">
+
+                <div class="mt-5 modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5 text-main" id="exampleModalLabel"><span *ngIf="!islodaing">{{spseficPrand?.name}}</span><span *ngIf="islodaing"><i class="fa-solid fa-spinner fa-spin"></i></span>  </h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                          <img *ngIf="!islodaing" [src]="spseficPrand?.image" [alt]="spseficPrand?.slug">
+                          <span *ngIf="islodaing"><i class="fa-solid fa-spinner fa-spin"></i></span>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </figure>
+        </div>
+    </div>

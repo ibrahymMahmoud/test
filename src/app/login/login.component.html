@@ -1,0 +1,36 @@
+<section class="w-75 mx-auto my-5">
+    <div *ngIf="errormessage" class="alert alert-danger text-center display-5">{{errormessage}}</div>
+    <h2 class="text-main"> login now :</h2>
+    <form [formGroup]="loginform" (ngSubmit)="loginSubmint()">
+
+        <div class="mb-3">
+            <label for="email">email :</label>
+            <input formControlName="email" type="text" class="form-control">
+            <div *ngIf="loginform.get('email')?.errors && loginform.get('email')?.['touched'] "
+                class="alert alert-danger">
+                <p *ngIf="loginform.get('email')?.errors?.['required']">email is requierd</p>
+                <p *ngIf="loginform.get('email')?.errors?.['email']">please enter availd email </p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="password">password :</label>
+            <input formControlName="password" type="text" class="form-control">
+            <div *ngIf="loginform.get('password')?.errors && loginform.get('password')?.['touched'] "
+                class="alert alert-danger">
+                <p *ngIf="loginform.get('password')?.errors?.['required']">password is requierd</p>
+                <p *ngIf="loginform.get('password')?.errors?.['minlength']"> password must be more than 6 </p>
+            </div>
+        </div>
+
+        <div style="width: fit-content;" class="ms-auto">
+            <span class="btn text-main " routerLink="/forgetPass"> forget password</span>
+            <button [disabled]="loginform.invalid" type="submit" class="ms-auto btn bg-main text-white">login<span
+                    *ngIf="loadingSpinner"><i class="fa-solid fa-spinner fa-spin"></i></span> </button>
+        </div>
+
+    </form>
+
+    
+
+</section>

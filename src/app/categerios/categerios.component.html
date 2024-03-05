@@ -1,0 +1,19 @@
+
+    <div class="row container-sm mx-auto mt-2 mb-4">
+        <div class="col-lg-3 col-md-4  p-1 pb-0" *ngFor="let category of allCategerios">
+            <figure [routerLink]="['/subCategery',category?._id]" (click)="getSpecificCategory(category?._id)" class="border border-2 border-success rounded-3 position-relative cursor-pointer">
+
+                <img class="w-100" style="height:360px;" [src]="category.image" [alt]="category.name">
+
+                <figcaption  class="border-top border-success h4 border-2 text-center pb-0 p-2 text-main">{{category.name}}</figcaption>
+
+
+                <div class="layer position-absolute fixed-top bottom-0 d-flex justify-content-center align-items-center bg-success bg-opacity-50">
+                    <p class=" h1 text-white fw-bolder">{{category.name}}</p>
+                </div>
+
+            </figure>
+        </div>
+    </div>
+
+    
